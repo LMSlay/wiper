@@ -1,0 +1,33 @@
+public static boolean d(String paramString)
+  {
+    InputStream localInputStream;
+    int i;
+    try
+    {
+      Socket localSocket = new Socket("127.0.0.1", 8791);
+      localInputStream = localSocket.getInputStream();
+      Object localObject = localSocket.getOutputStream();
+      byte[] arrayOfByte1 = new byte[512];
+      byte[] arrayOfByte2 = "hi,xiaolu".getBytes();
+      ((OutputStream)localObject).write(arrayOfByte2);
+      int j = localInputStream.read(arrayOfByte1);
+      if (!(new String(arrayOfByte1, 0, j).equals("hi,liqian")))
+        break label149;
+      byte[] arrayOfByte3 = paramString.getBytes();
+      ((OutputStream)localObject).write(arrayOfByte3);
+      int k = localInputStream.read(arrayOfByte1);
+      if (!(new String(arrayOfByte1, 0, k).equals("command ok")))
+        break label144;
+      localInputStream = null;
+      byte[] arrayOfByte4 = "bye".getBytes();
+      ((OutputStream)localObject).write(arrayOfByte4);
+      localObject = localInputStream;
+      label144: label149: return localObject;
+    }
+    catch (UnknownHostException localUnknownHostException)
+    {
+      i = 0;
+    }
+...
+
+  } 

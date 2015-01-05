@@ -1,0 +1,16 @@
+python-magic
+pefile
+PrettyTable
+pydeep
+requests
+SQLAlchemy
+pycrypto
+OleFileIO_PL
+BeautifulSoup4
+bottle
+pylzma
+pyelftools
+bitstring
+dnspython
+pyreadline
+
